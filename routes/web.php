@@ -13,4 +13,13 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'PriceController@index');
+Route::get('/price', 'PriceController@index');
+
+Route::post('/price', 'PriceController@store');
+Route::get('/price/add', 'PriceController@add');
+
+Route::get('/price/edit/{price}', 'PriceController@edit');
+Route::post('/price/update', 'PriceController@update');
+
+Route::delete('/price/{price}', 'PriceController@destroy');
